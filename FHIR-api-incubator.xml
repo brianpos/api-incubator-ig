@@ -39,6 +39,7 @@
 <page key="async-bulk" name="Asynchronous bulk data pattern"/>
 <page key="async-bundle" name="Asynchronous interaction pattern"/>
 <page key="changes" name="Change Log"/>
+<page key="fhirpath" name="FHIRPath Extensions for FHIR"/>
 <page key="operations-for-large-resources" name="Operations for Large Resources"/>
 <page key="toc" name="Table of Contents"/>
 </specification>

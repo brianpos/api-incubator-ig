@@ -51,6 +51,8 @@ pages:
     title: Asynchronous interaction pattern
   operations-for-large-resources.md:
     title: Operations for Large Resources
+  fhirpath.md:
+    title: FHIRPath Extensions for FHIR
   changes.md:
     title: Change Log
 
@@ -66,5 +68,6 @@ menu:
     Async Bulk Data Access: async-bulk.html
     Async Bundle: async-bundle.html
     Operations for Large Resources: operations-for-large-resources.html
+    FHIRPath Extensions for FHIR: fhirpath.html
   Artifacts: artifacts.html
   Change Log: changes.html
