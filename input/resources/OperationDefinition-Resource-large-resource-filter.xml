@@ -15,7 +15,7 @@
   <version value="6.0.0"/>
   <name value="Filter"/>
   <title value="Filter an array in a large resource"/>
-  <status value="draft"/>
+  <status value="active"/>
   <kind value="operation"/>
   <date value="2022-08-23T10:01:24+11:00"/>
   <publisher value="HL7 (FHIR Project)"/>
