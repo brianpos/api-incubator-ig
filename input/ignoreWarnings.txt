@@ -1,19 +1,44 @@
 == Suppressed Messages ==
 
-# 01 - Pinned canonicals
-Pinned the version of http://hl7.org/fhir/StructureDefinition/workflow-supportingInfo to 5.2.0%
+# Jurisdiction deprecation warning
+INFORMATION: ImplementationGuide/hl7.fhir.uv.api-incubator: ImplementationGuide.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: OperationDefinition/List-find: OperationDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: OperationDefinition/Resource-large-resource-add: OperationDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-context: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-context-quantity: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-context-type: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-context-type-quantity: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-context-type-value: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-date: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-description: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-identifier: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-jurisdiction: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-name: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-publisher: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-start: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-status: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-url: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-version: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: SearchParameter/GraphDefinition-experimental: SearchParameter.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: CodeSystem/graph-compartment-rule: CodeSystem.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: CodeSystem/graph-compartment-use: CodeSystem.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: OperationDefinition/Resource-large-resource-filter: OperationDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: OperationDefinition/Resource-large-resource-remove: OperationDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: StructureDefinition/GraphDefinition: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: ValueSet/graph-compartment-rule: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: ValueSet/graph-compartment-use: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: ValueSet/publication-status: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
 
-# 02 - Inherited from FHIR Core
-The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.2.0 is deprecated
+# R6 IG messages
+ERROR: ImplementationGuide/hl7.fhir.uv.api-incubator: This IG is version 6.0.0-ballot3, while the IG 'hl7.terminology.r5' is from version 5.0.0
+ERROR: ImplementationGuide/hl7.fhir.uv.api-incubator: This IG is version 6.0.0-ballot3, while the IG 'hl7.fhir.uv.extensions.r5' is from version 5.0.0
+ERROR: ImplementationGuide/hl7.fhir.uv.api-incubator: This IG is version 6.0.0-ballot3, while the IG 'hl7.fhir.uv.tools.r5' is from version 5.0.0
+ERROR: There is no jira specification file defined with the expected name of FHIR-api-incubator in the xml folder of the  https://github.com/HL7/Jira-Spec-Artifacts project.  This must exist before ballot or publication.
+WARNING: ImplementationGuide/hl7.fhir.uv.api-incubator: ImplementationGuide.dependsOn[0]: The ImplementationGuide is based on FHIR version 6.0.0-ballot3 but package hl7.terminology.r5#7.1.0 is based on FHIR version 5.0.0. In general, this version mismatch should be avoided - some tools will try to make this work with variable degrees of success, but others will not even try
+ERROR: ImplementationGuide/hl7.fhir.uv.api-incubator: ImplementationGuide.dependsOn[1]: The canonical URL http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions points to the package hl7.fhir.uv.extensions which is inconsistent with the stated packageId of hl7.fhir.uv.extensions.r5
 
-# 03 - The codes in this code system are moving to LOINC and THO
-Most code systems defined in HL7 IGs will need to move to THO later during the process. Consider giving this code system a THO URL now (See https://confluence.hl7.org/display/TSMG/Terminology+Play+Book, and/or talk to TSMG)
-
-# 04 - We will add conformance clause testing eventually
-The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause
-
-# 05 - Newly added LOINC code for Symptoms Absent Observation
-Unknown code '111551-8' in the CodeSystem 'http://loinc.org' version '2.81'
-
-# 06 - The value set is the entire ICF code system which is quite large
-The value set expansion is too large, and only a subset has been displayed
+# Conformance clause tagging
+INFORMATION: StructureDefinition-GraphDefinition.html: The html source contains the word 'SHOULD' but it is not in a text phrase marked as a conformance clause: ' In this format, the amount of whitespace, and its form, is irrelevant. For the purposes of clarity, the statements here are laid out on different lines, but this is not required. When a GraphDefinition is used as a parameter in a url, no extra whitespace is used, just a single space, and the descriptions SHOULD be omitted. '
+INFORMATION: async-bulk.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'The request will support the HTTP methods, URLs, headers and other parameters that normally apply, but servers     SHALL also support the Prefer header described below, and SHOULD support the Accept header     and _outputFormat parameter described below.'
+INFORMATION: async-bundle.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'The request will support the HTTP methods, URLs, headers and other parameters that normally apply, but servers     SHALL also support the Prefer header described below. The Accept header in the request     will dictate the format of the Bundle Resource returned when the request completes successfully or an     OperationOutcome Resource when it fails, as well any the format for any OperationOutcome Resources returned to     indicate a transient polling error while the request is being processed.'
+INFORMATION: operations-for-large-resources.html: The html source contains the word 'SHALL' but it is not in a text phrase marked as a conformance clause: 'additions: an input resource matching the type of the target resource. The client SHALL populate     all required top-level elements in a way that matches the target resource, to ensure the resource is technically     valid. The server SHALL ignore all elements except for the relevant array (e.g., Group.member or     List.entry).'

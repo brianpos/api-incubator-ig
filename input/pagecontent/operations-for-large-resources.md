@@ -1,17 +1,8 @@
-<!DOCTYPE HTML>
-
-[%settitle Operations for Large Resources%]
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>[%file newheader%]</head>
-
-<body>
-
-  [%file newnavbar%]
+<div>
 
 <h1>Operations for Large Resources (e.g., Groups/Lists)</h1>
 
-<table class="colsd"><tr><td id="wg">Responsible Owner: <a _target="blank" href="[%wg fhir%]">[%wgt fhir%]</a> Work Group</td><td id="ballot"><a href="versions.html#std-process">Standards Status</a>:<!--!ns!--><a href="versions.html#std-process">Draft</a></td></tr></table>
+<table class="colsd"><tr><td id="wg">Responsible Owner: <a _target="blank" href="[%wg fhir%]">[%wgt fhir%]</a> Work Group</td><td id="ballot"><a href="https://hl7.org/fhir/build/versions.html#std-process">Standards Status</a>:<!--!ns!--><a href="https://hl7.org/fhir/build/versions.html#std-process">Draft</a></td></tr></table>
 
 <p>
 This page defines three operations that allow for efficient 
@@ -23,12 +14,12 @@ the entire resource.
 </p>
 <p>
 Adding and deleting from the resource can also be done using 
-the <a href="http.html#patch">PATCH</a> interaction. Implementers 
+the <a href="https://hl7.org/fhir/build/http.html#patch">PATCH</a> interaction. Implementers 
 are welcome to use the patch interaction but these operations 
 provide more certainty and simplicity, since they are tailored
 directly to the List and Group resources. Similarly, Implementers
 can retrieve a subset of a List or Group resources
-using <a href="graphql.html">GraphQL</a>, but not all servers support 
+using <a href="https://hl7.org/fhir/build/graphql.html">GraphQL</a>, but not all servers support 
 GraphQL, and these operations are simpler than using GraphQL 
 to filter the data (and potentially quicker for the server than 
 using GraphQL).
@@ -86,7 +77,7 @@ If-Match: W/<span class="hljs-string">"4"</span>
 
 <h3><code>$add</code> operation details</h3>
 <p>
-  There is a <a href="resource-operation-add.html">formal definition for this operation</a>
+  There is a <a href="OperationDefinition-Resource-large-resource-add.html">formal definition for this operation</a>
 </p>
 <p>Instance-level operation, invoked by</p>
 <ul>
@@ -104,13 +95,13 @@ If-Match: W/<span class="hljs-string">"4"</span>
 <p>Behavior:</p>
 <ul>
   <li>The server SHALL extend the target resource array with any entries from the input resource array that do not
-    match an existing entry. See <a href="#Matching-Algorithm">Matching Algorithm</a>.</li>
+    match an existing entry. See <a href="#matching-algorithm">Matching Algorithm</a>.</li>
 </ul>
 <h3>Contention Management</h3>
 <p>
   Clients MAY supply an <code>If-Match</code> header with an ETag reflecting the current version of the target
   resource. Servers SHALL NOT proceed if a supplied ETag does not match the current version of the target resource,
-  following the scheme described at <a href="http.html#concurrency">https://hl7.org/fhir/http.html#concurrency</a>.
+  following the scheme described at <a href="https://hl7.org/fhir/build/http.html#concurrency">https://hl7.org/fhir/http.html#concurrency</a>.
 </p>
 
 
@@ -164,7 +155,7 @@ If-Match: W/<span class="hljs-string">"4"</span>
 
 <h3><code>$remove</code> operation details</h3>
 <p>
-  There is a <a href="resource-operation-remove.html">formal definition for this operation</a>
+  There is a <a href="OperationDefinition-Resource-large-resource-remove.html">formal definition for this operation</a>
 </p>
 <p>Instance-level operation, invoked by</p>
 <ul>
@@ -182,13 +173,13 @@ If-Match: W/<span class="hljs-string">"4"</span>
 <p>Behavior:</p>
 <ul>
   <li>The server SHALL remove any entries in the target resource’s array that match an entry in the input resource’s
-    array. See <a href="#Matching-Algorithm">Matching Algorithm</a>.</li>
+    array. See <a href="#matching-algorithm">Matching Algorithm</a>.</li>
 </ul>
 <h3>Contention Management</h3>
 <p>Clients MAY supply an <code>If-Match</code> header with an ETag reflecting the current version of the target
   resource. Servers SHALL NOT proceed if a supplied ETag does not match the current version of the target resource,
   following the scheme described at <a
-    href="http.html#concurrency">https://hl7.org/fhir/http.html#concurrency</a>.
+    href="https://hl7.org/fhir/build/http.html#concurrency">https://hl7.org/fhir/http.html#concurrency</a>.
 </p>
 
   <h2><code>$filter</code> operation</h2>
@@ -250,7 +241,7 @@ Content-Type: application/fhir+json
   <h3><code>$filter</code> operation details</h3>
 
   <p>
-    There is a <a href="resource-operation-filter.html">formal definition for this operation</a>
+    There is a <a href="OperationDefinition-Resource-large-resource-filter.html">formal definition for this operation</a>
   </p>
   
   <p>Instance-level operation, invoked by</p>
@@ -269,7 +260,7 @@ Content-Type: application/fhir+json
   <p>Behavior:</p>
   <ul>
     <li>The server SHALL determine which existing array entries in the target resource "match" each entry in the input
-      resource. See <a href="#Matching-Algorithm">Matching Algorithm</a>.</li>
+      resource. See <a href="#matching-algorithm">Matching Algorithm</a>.</li>
     <li>The server SHALL return a resource that includes all matching array entries</li>
     <li>The returned resource SHALL include a <code>SUBSETTED</code> Coding in <code>.meta.tag</code></li>
   </ul>
@@ -331,8 +322,4 @@ Content-Type: application/fhir+json
       not less-specific targets.</p>
   </div>
   
-  [%file newfooter%]
-
-</body>
-
-</html>
+</div>

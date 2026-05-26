@@ -3,56 +3,62 @@
 # │  used properties are included. For a list of all supported properties and their functions,     │
 # │  see: https://fshschool.org/docs/sushi/configuration/.                                         │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯
-id: hl7.fhir.uv.symptoms
-canonical: http://hl7.org/fhir/uv/symptoms
-name: Symptoms Data Standards
-title: FHIR R4 Symptoms Implementation Guide
-description: A guide that details how to capture and exchange Symptoms data in FHIR
+id: hl7.fhir.uv.api-incubator
+canonical: http://hl7.org/fhir/uv/api-incubator
+name: API Incubator
+title: FHIR R6 API Incubator
+description: A guide that details how to capture and exchange API data in FHIR
 status: active # draft | active | retired | unknown
 version: 0.1.0
-fhirVersion: 6.0.0-ballot3 
+fhirVersion: 6.0.0-ballot3
 copyrightYear: 2025+
 releaseLabel: ci-build
 license: CC0-1.0 # https://www.hl7.org/fhir/valueset-spdx-license.html
 jurisdiction: http://unstats.un.org/unsd/methods/m49/m49.htm#001 "World" # https://www.hl7.org/fhir/valueset-jurisdiction.html
 publisher:
-  name: HL7 International / Clinical Interoperability Council
-  url: http://www.hl7.org/Special/committees/cic
+  name: HL7 International / FHIR Infrastructure
+  url: http://www.hl7.org/Special/committees/fiwg
 extension:
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
     valueInteger: 1
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-wg
-    valueCode: cic
+    valueCode: fhir
 
 dependencies:
 
 parameters:
-  path-resource: input/resources/graphdefinition
-  additional-resource: input/resources/graphdefinition/StructureDefinition-GraphDefinition.xml
+  apply-publisher: true
+  apply-contact: true
+  globals-in-artifacts: true
+  show-inherited-invariants: false
+  shownav: false
+  path-pages:
+    - input/pagecontent
+  path-resource: 
+    - input/resources/graphdefinition
   special-url-base: http://hl7.org/fhir
-  
+  additional-resource: 
+    - input/resources/graphdefinition/StructureDefinition-GraphDefinition.xml
+
 pages:
   index.md:
-    title: IG Home
+    title: API Incubator
+  async-bulk.md:
+    title: Asynchronous bulk data pattern
+  async-bundle.md:
+    title: Asynchronous interaction pattern
+  operations-for-large-resources.md:
+    title: Operations for Large Resources
   changes.md:
     title: Change Log
-  background.md:
-    title: Background
-  exchange.md:
-    exchange: Exchange
 
 menu:
   Home: index.html
-  Background:
-    Reading this IG: background.html
   Specification:
-    Exchange Patterns: exchange.html
-  FHIR Artifacts:
-    Artifacts: artifacts.html
-  Support:
-    Discussion Forum: https://chat.fhir.org/#channels/501058/Symptoms.20on.20FHIR
-#    Project Dashboard: 
-#    Propose a Change: 
+    Async Bulk Data Access: async-bulk.html
+    Async Bundle: async-bundle.html
+    Operations for Large Resources: operations-for-large-resources.html
+  Artifacts: artifacts.html
   Change Log: changes.html

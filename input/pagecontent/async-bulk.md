@@ -1,36 +1,24 @@
-<!DOCTYPE HTML>
-
-[%settitle Asynchronous bulk data pattern%]
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
-  [%file newheader%]
-</head>
-
-<body>
-  [%file newnavbar%]
-
-
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3.org/1999/xhtml ../../schema/fhir-xhtml.xsd" xmlns="http://www.w3.org/1999/xhtml">
   <h2 id="asynchronous-bulk-data-request-pattern">Asynchronous Bulk Data Request Pattern</h2>
   <table class="colsd">
     <tr>
       <td id="wg">Responsible Owner: <a _target="blank" href="[%wg fhir%]">[%wgt fhir%]</a> Work Group</td>
       
-      <td id="ballot"><a href="versions.html#std-process">Standards Status</a>:
-        <!--!ns!--><a href="versions.html#std-process">Draft</a>
+      <td id="ballot"><a href="https://hl7.org/fhir/build/versions.html#std-process">Standards Status</a>:
+        <!--!ns!--><a href="https://hl7.org/fhir/build/versions.html#std-process">Draft</a>
       </td>
     </tr>
   </table>
 
   <h3 id="use-case">Use Case</h3>
-  <p>All of the interactions defined in the <a href="http.html">RESTful API</a> are described as synchronous operations
+  <p>All of the interactions defined in the <a href="https://hl7.org/fhir/build/http.html">RESTful API</a> are described as synchronous operations
     - that is, the client makes a query and waits for the server to respond with the outcome in the HTTP response. This
     pattern is not always suitable when substantial amounts of data must be returned.</p>
   <p>A good example of this is the <a href="http://hl7.org/fhir/uv/bulkdata/export.html">$export operation</a>, where
     simple searches may result in large amounts of data. </p>
   <p>The asynchronous request pattern, based on <a href="https://tools.ietf.org/html/rfc7240#section-4.1">rfc 7240</a>,
-    caters to this use case and is applicable for for use in <a href="operations.html">Operations</a> and
-    <a href="http.html">Defined Interactions</a> interactions. Servers may choose which interactions the pattern should be
+    caters to this use case and is applicable for for use in <a href="https://hl7.org/fhir/build/operations.html">Operations</a> and
+    <a href="https://hl7.org/fhir/build/http.html">Defined Interactions</a> interactions. Servers may choose which interactions the pattern should be
     supported
     on (if at all).</p>
 
@@ -47,9 +35,9 @@
   <ul>
     <li>
       <p><code>Accept</code> (string)</p>
-      <p>Specifies the format of the optional <a href="operationoutcome.html">OperationOutcome Resource</a> response to
+      <p>Specifies the format of the optional <a href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome Resource</a> response to
         the kick-off request. A client SHOULD provide this header. A server may support any subset of the <a
-          href="resource-formats.html#wire">Serialization Format Representations</a>. If omitted, the server MAY return an error
+          href="https://hl7.org/fhir/build/resource-formats.html#wire">Serialization Format Representations</a>. If omitted, the server MAY return an error
         or MAY process the request and return a format selected by the server.</p>
     </li>
     <li>
@@ -104,12 +92,12 @@
     <li>HTTP Status Code of <code>202 Accepted</code> </li>
     <li><code>Content-Location</code> header with the absolute URL of an endpoint for subsequent status requests
       (polling location)</li>
-    <li>Optionally, a <a href="operationoutcome.html">OperationOutcome Resource</a> in the body</li>
+    <li>Optionally, a <a href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome Resource</a> in the body</li>
   </ul>
   <h5 id="kick-off-response---error">Response - Error (e.g. unsupported search parameter)</h5>
   <ul>
     <li>HTTP Status Code of <code>4XX</code> or <code>5XX</code></li>
-    <li>The body SHALL be a <a href="operationoutcome.html">OperationOutcome Resource</a></li>
+    <li>The body SHALL be a <a href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome Resource</a></li>
   </ul>
   <hr />
 
@@ -119,7 +107,7 @@
   <code>Content-Location</code> header to cancel the request. If the request has been completed, a server MAY use the
   request as a signal that a client is done retrieving files and that it is safe for the sever to remove those from
   storage. Following the delete request, when subsequent requests are made to the polling location, the server SHALL
-  return a <code>404 Not Found</code> error and an associated <a href="operationoutcome.html">OperationOutcome
+  return a <code>404 Not Found</code> error and an associated <a href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome
     Resource</a>.</p>
 
   <h5 id="delete-response---success">Response - Success</h5>
@@ -130,7 +118,7 @@
   <h5 id="delete-response---error">Response - Error</h5>
   <ul>
     <li>HTTP status code of <code>4XX</code> or <code>5XX</code></li>
-    <li>Optionally a <a href="operationoutcome.html">OperationOutcome Resource</a> in the body</li>
+    <li>Optionally a <a href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome Resource</a> in the body</li>
   </ul>
 
   <h3 id="status-request">Status Request</h3>
@@ -147,7 +135,7 @@
     timing of future polling requests. The server SHOULD keep an accounting of status queries received from a given
     client, and if a client is polling too frequently, the server SHOULD respond with a
     <code>429 Too Many Requests</code> status code in addition to a <code>Retry-After</code> header, and optionally a <a
-    href="operationoutcome.html">OperationOutcome Resource</a> with further explanation. If excessively frequent status queries 
+    href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome Resource</a> with further explanation. If excessively frequent status queries 
     persist, the server MAY return a <code>429 Too Many Requests</code> status code without returning a status answer. It may 
     either return a Retry-after header with the 429 indicating the amount of time that needs to pass before it will again 
     respond to a status check, or it may choose to abandon the asynchronous operation entirely and force a retry. 
@@ -157,7 +145,7 @@
 
   <p>When requesting status, the client SHOULD use an <code>Accept</code> header indicating a content type of
     <code>application/json</code>. In the case that errors prevent the asynchronous operation from completing, the server SHOULD respond
-    with a <a href="operationoutcome.html">OperationOutcome Resource</a> in JSON format.
+    with a <a href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome Resource</a> in JSON format.
   </p>
 
   <h5 id="status-response---in-progress">Response - In-Progress</h5>
@@ -172,8 +160,8 @@
   <ul>
     <li>HTTP status code of <code>4XX</code> or <code>5XX</code></li>
     <li><code>Content-Type</code> header of <code>application/fhir+json</code> when body is a <a
-        href="operationoutcome.html">OperationOutcome Resource</a></li>
-    <li>The body of the response SHOULD be a <a href="operationoutcome.html">OperationOutcome Resource</a> in
+        href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome Resource</a></li>
+    <li>The body of the response SHOULD be a <a href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome Resource</a> in
       JSON format. If this is not possible (for example, the infrastructure layer returning the error is not FHIR
       aware), the server MAY return an error message in another format and include a corresponding value for the
       <code>Content-Type</code> header.
@@ -181,14 +169,14 @@
   </ul>
 
   <p>In the case of a polling failure that does not indicate failure of the original request, a server SHOULD use a <a
-      href="codesystem-issue-type.html#issue-type-transient">transient code</a> from the <a
-      href="codesystem-issue-type.html">IssueType valueset</a> when populating the <a
-      href="operationoutcome.html">OperationOutcome Resource</a> <code>issue.code</code> element to indicate to the
+      href="https://hl7.org/fhir/build/codesystem-issue-type.html#issue-type-transient">transient code</a> from the <a
+      href="https://hl7.org/fhir/build/codesystem-issue-type.html">IssueType valueset</a> when populating the <a
+      href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome Resource</a> <code>issue.code</code> element to indicate to the
     client that it should retry the request at a later time.</p>
 
   <p><em>Note</em>: Even if some of the requested resources cannot successfully be returned, the overall request MAY
     still succeed. In this case, the <code>Response.error</code> array of the completion response body SHALL be
-    populated with one or more files in ndjson format containing <a href="operationoutcome.html">OperationOutcome
+    populated with one or more files in ndjson format containing <a href="https://hl7.org/fhir/build/operationoutcome.html">OperationOutcome
       Resources</a> to indicate what went wrong (see below). In the case of a partial success, the server SHALL use a
     <code>200</code> status code instead of <code>4XX</code> or <code>5XX</code>. The choice of when to determine that
     a job has failed in its entirety (error status) vs. returning a partial success (complete status) is left up to the
@@ -308,14 +296,14 @@
           <br />
           Example deleted resource bundle (represents one line in output file):
           <pre><code>{
-&nbsp;"resourceType": "Bundle",
-&nbsp;"id": "bundle-transaction",
-&nbsp;"meta": {"lastUpdated: "2020-04-27T02:56:00Z},
-&nbsp;"type": "transaction",
-&nbsp;"entry":[{
-&nbsp;&nbsp;"request": {"method": "DELETE", "url": "Patient/123"}
-&nbsp;&nbsp;...
-&nbsp;}]
+  "resourceType": "Bundle",
+  "id": "bundle-transaction",
+  "meta": {"lastUpdated: "2020-04-27T02:56:00Z},
+  "type": "transaction",
+  "entry":[{
+    "request": {"method": "DELETE", "url": "Patient/123"}
+    ...
+  }]
 }</code></pre>
         </td>
       </tr>
@@ -458,8 +446,4 @@
   <p>Note that if a server copies files to the Bulk Data output endpoint or proxies requests to facilitate access from
     this endpoint, it may need to modify the <code>Attachment.url</code> element when generating the Bulk Data output
     files.</p>
-
-  [%file newfooter%]
-</body>
-
-</html>
+</div>
