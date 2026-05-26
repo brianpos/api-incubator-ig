@@ -54,6 +54,12 @@ pages:
   changes.md:
     title: Change Log
 
+resources:
+  List/GraphDefinition-examples:
+    description: A set of GraphDefinition resources that illustrate the use of the $graph operation. These examples are not normative, and are not intended to be used as test cases.
+  List/GraphDefinition-operations:
+    description: All the GraphDefinition operations available in this guide.
+
 menu:
   Home: index.html
   Specification:
