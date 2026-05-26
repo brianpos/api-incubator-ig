@@ -12,7 +12,7 @@ The GraphDefinition resource can be used to:
  <li>Document rules about the relationship between a set of resources e.g. must all resources concern the same patient?</li>
 </ul>
 
-<a name="summary"></a>
+<a name="summary-set"></a>
 <h4>Summarize a set of profiles on resources</h4>
 <p>
 FHIR resources are relatively granular. In many/most cases, many resources 
