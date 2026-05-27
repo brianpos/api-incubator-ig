@@ -47,12 +47,24 @@ pages:
     title: API Incubator
   async-bulk.md:
     title: Asynchronous bulk data pattern
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
   async-bundle.md:
     title: Asynchronous interaction pattern
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
   operations-for-large-resources.md:
     title: Operations for Large Resources
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
   fhirpath.md:
     title: FHIRPath Extensions for FHIR
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: trial-use
   changes.md:
     title: Change Log
 

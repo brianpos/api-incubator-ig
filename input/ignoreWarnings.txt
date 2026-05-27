@@ -27,7 +27,10 @@ INFORMATION: OperationDefinition/Resource-large-resource-remove: OperationDefini
 INFORMATION: StructureDefinition/GraphDefinition: StructureDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
 INFORMATION: ValueSet/graph-compartment-rule: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
 INFORMATION: ValueSet/graph-compartment-use: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
-INFORMATION: ValueSet/publication-status: ValueSet.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: OperationDefinition/Resource-graph: OperationDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: OperationDefinition/Resource-meta: OperationDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: OperationDefinition/Resource-meta-add: OperationDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
+INFORMATION: OperationDefinition/Resource-meta-delete: OperationDefinition.jurisdiction[0]: Reference to deprecated ValueSet http://hl7.org/fhir/ValueSet/jurisdiction|6.0.0-ballot3
 
 # R6 IG messages
 ERROR: ImplementationGuide/hl7.fhir.uv.api-incubator: This IG is version 6.0.0-ballot3, while the IG 'hl7.terminology.r5' is from version 5.0.0

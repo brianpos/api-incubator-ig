@@ -12,7 +12,7 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="{{name}}.useContext.valueCodeableConcept"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-context"/>
+        <url value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context"/>
         <status value="active"/>
         <description value="A use context assigned to the graph definition"/>
         <code value="context"/>
@@ -32,7 +32,7 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="{{name}}.useContext.valueQuantity,{{name}}.useContext.valueRange"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-context-quantity"/>
+        <url value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-quantity"/>
         <status value="active"/>
         <description value="A quantity- or range-valued use context assigned to the graph definition"/>
         <code value="context-quantity"/>
@@ -52,7 +52,7 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="{{name}}.useContext.code"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-context-type"/>
+        <url value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-type"/>
         <status value="active"/>
         <description value="A type of use context assigned to the graph definition"/>
         <code value="context-type"/>
@@ -77,11 +77,11 @@
         <expression value="GraphDefinition.useContext"/>
         <processingMode value="normal"/>
         <component>
-          <definition value="context-type"/>
+          <definition value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-type"/>
           <expression value="code"/>
         </component>
         <component>
-          <definition value="context-quantity"/>
+          <definition value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-quantity"/>
           <expression value="value.ofType(Quantity) | value.ofType(Range)"/>
         </component>
       </SearchParameter>
@@ -102,11 +102,11 @@
         <expression value="GraphDefinition.useContext"/>
         <processingMode value="normal"/>
         <component>
-          <definition value="context-type"/>
+          <definition value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-type"/>
           <expression value="code"/>
         </component>
         <component>
-          <definition value="context"/>
+          <definition value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context"/>
           <expression value="value.ofType(CodeableConcept)"/>
         </component>
       </SearchParameter>
