@@ -1,4 +1,4 @@
-> This is not the complete set of FHIRPath extensions for FHIR. Most extensions remain defined in the core [R6 specification](https://hl7.org/fhir/build/fhirpath.html), only a subset was extracted for potential further refinement.
+> This is not the complete set of FHIRPath extensions for FHIR. Most extensions remain defined in the core [R6 specification](https://build.fhir.org/fhirpath.html), only a subset was extracted for potential further refinement.
 >
 > The [Terminology Service API](#txapi) is more mature and has some implementation support.<br/>
 > The [Type Factory](#factory) has seen minor/partial implementation. The base FHIRPath specification, published in STU3, supports native structure creation in a more natural way, and we are seeking implementer feedback on whether some of these functions should be removed.<br/>
@@ -10,7 +10,7 @@
 <p>
 In order to support terminological reasoning in FHIRPath statements, FHIR defines
 a general %terminologies object that FHIRPath implementations should make available.
-Calls to this object are passed through a <a href="terminology-service.html">standard FHIR terminology service</a>.
+Calls to this object are passed through a <a href="https://hl7.org/fhir/terminology-service.html">standard FHIR terminology service</a>.
 </p>
 <p>
 Summary:
@@ -58,17 +58,17 @@ Parameters:
 %terminologies.expand(valueSet, params) : ValueSet
 </h4>
 <p>
-This calls the <a href="terminology-service.html#expand">Terminology Service $expand</a> operation (<a href="valueset-operation-expand.html">formal definition</a>).
+This calls the <a href="https://hl7.org/fhir/terminology-service.html#expand">Terminology Service $expand</a> operation (<a href="https://hl7.org/fhir/valueset-operation-expand.html">formal definition</a>).
 </p>
 <p>
 Parameters:
 </p>
 <ul>
- <li><b>valueSet</b>: either an actual <a href="valueset.html">ValueSet</a>, or a <a href="references.html#canonical">canonical URL</a> reference to a value set.</li>
+ <li><b>valueSet</b>: either an actual <a href="https://hl7.org/fhir/valueset.html">ValueSet</a>, or a <a href="https://hl7.org/fhir/references.html#canonical">canonical URL</a> reference to a value set.</li>
  <li><b>params</b>: a URL encoded string with other parameters for the expand operation (e.g., 'displayLanguage=en&amp;activeOnly=true')</li>
 </ul>
 <p>
-<b>Return Value:</b> a <a href="valueset.html">ValueSet</a> with an expansion. If an error occurs, the return value is empty.
+<b>Return Value:</b> a <a href="https://hl7.org/fhir/valueset.html">ValueSet</a> with an expansion. If an error occurs, the return value is empty.
 </p>
 
 <hr/>
@@ -80,13 +80,13 @@ Parameters:
 %terminologies.lookup(coded, params) : Parameters
 </h4>
 <p>
-This calls the <a href="terminology-service.html#lookup">Terminology Service $lookup</a> operation (<a href="codesystem-operation-lookup.html">formal definition</a>).
+This calls the <a href="https://hl7.org/fhir/terminology-service.html#lookup">Terminology Service $lookup</a> operation (<a href="https://hl7.org/fhir/codesystem-operation-lookup.html">formal definition</a>).
 </p>
 <p>
 Parameters:
 </p>
 <ul>
- <li><b>coded</b>: either a <a href="datatypes.html#coding">Coding</a>, a <a href="datatypes.html#CodeableConcept">CodeableConcept</a>, or a resource element that is a <a href="datatypes.html#code">code</a></li>
+ <li><b>coded</b>: either a <a href="https://hl7.org/fhir/datatypes.html#coding">Coding</a>, a <a href="https://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a>, or a resource element that is a <a href="https://hl7.org/fhir/datatypes.html#code">code</a></li>
  <li><b>params</b>: a URL encoded string with other parameters for the lookup operation (e.g., 'date=2011-03-04&amp;displayLanguage=en')</li>
 </ul>
 <p>
@@ -100,19 +100,19 @@ Parameters:
 %terminologies.validateVS(valueSet, coded, params) : Parameters
 </h4>
 <p>
-This calls the <a href="terminology-service.html#expand">Terminology Service $validate-code</a> operation on a value set
-(<a href="valueset-operation-validate-code.html">formal definition</a>).
+This calls the <a href="https://hl7.org/fhir/terminology-service.html#expand">Terminology Service $validate-code</a> operation on a value set
+(<a href="https://hl7.org/fhir/valueset-operation-validate-code.html">formal definition</a>).
 </p>
 <p>
 Parameters:
 </p>
 <ul>
- <li><b>valueSet</b>: either an actual <a href="valueset.html">ValueSet</a>, or a <a href="references.html#canonical">canonical URL</a> reference to a value set.</li>
- <li><b>coded</b>: either a <a href="datatypes.html#coding">Coding</a>, a <a href="datatypes.html#CodeableConcept">CodeableConcept</a>, or a resource element that is a <a href="datatypes.html#code">code</a></li>
+ <li><b>valueSet</b>: either an actual <a href="https://hl7.org/fhir/valueset.html">ValueSet</a>, or a <a href="https://hl7.org/fhir/references.html#canonical">canonical URL</a> reference to a value set.</li>
+ <li><b>coded</b>: either a <a href="https://hl7.org/fhir/datatypes.html#coding">Coding</a>, a <a href="https://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a>, or a resource element that is a <a href="https://hl7.org/fhir/datatypes.html#code">code</a></li>
  <li><b>params</b>: a URL encoded string with other parameters for the validate-code operation (e.g., 'date=2011-03-04&amp;displayLanguage=en')</li>
 </ul>
 <p>
-<b>Return Value:</b> A <a href="parameters.html">Parameters</a> resource with the results of the validation operation.
+<b>Return Value:</b> A <a href="https://hl7.org/fhir/parameters.html">Parameters</a> resource with the results of the validation operation.
 </p>
 
 <hr/>
@@ -122,19 +122,19 @@ Parameters:
 %terminologies.validateCS(codeSystem, coded, params) : Parameters
 </h4>
 <p>
-This calls the <a href="terminology-service.html#expand">Terminology Service $validate-code</a> operation on a code system
-(<a href="codesystem-operation-validate-code.html">formal definition</a>).
+This calls the <a href="https://hl7.org/fhir/terminology-service.html#expand">Terminology Service $validate-code</a> operation on a code system
+(<a href="https://hl7.org/fhir/codesystem-operation-validate-code.html">formal definition</a>).
 </p>
 <p>
 Parameters:
 </p>
 <ul>
- <li><b>codeSystem</b>: either an actual <a href="codesystem.html">CodeSystem</a>, or a <a href="references.html#canonical">canonical URL</a> reference to a code system.</li>
- <li><b>coded</b>: either a <a href="datatypes.html#coding">Coding</a>, a <a href="datatypes.html#CodeableConcept">CodeableConcept</a>, or a resource element that is a <a href="datatypes.html#code">code</a></li>
+ <li><b>codeSystem</b>: either an actual <a href="https://hl7.org/fhir/codesystem.html">CodeSystem</a>, or a <a href="https://hl7.org/fhir/references.html#canonical">canonical URL</a> reference to a code system.</li>
+ <li><b>coded</b>: either a <a href="https://hl7.org/fhir/datatypes.html#coding">Coding</a>, a <a href="https://hl7.org/fhir/datatypes.html#CodeableConcept">CodeableConcept</a>, or a resource element that is a <a href="https://hl7.org/fhir/datatypes.html#code">code</a></li>
  <li><b>params</b>: a URL encoded string with other parameters for the validate-code operation (e.g., 'date=2011-03-04&amp;displayLanguage=en')</li>
 </ul>
 <p>
-<b>Return Value:</b> A <a href="parameters.html">Parameters</a> resource with the results of the validation operation.
+<b>Return Value:</b> A <a href="https://hl7.org/fhir/parameters.html">Parameters</a> resource with the results of the validation operation.
 </p>
 
 <hr/>
@@ -144,15 +144,15 @@ Parameters:
 %terminologies.subsumes(system, coded1, coded2, params) : code
 </h4>
 <p>
-This calls the <a href="terminology-service.html#subsumes">Terminology Service $subsumes</a> operation (<a href="codesystem-operation-subsumes.html">formal definition</a>).
+This calls the <a href="https://hl7.org/fhir/terminology-service.html#subsumes">Terminology Service $subsumes</a> operation (<a href="https://hl7.org/fhir/codesystem-operation-subsumes.html">formal definition</a>).
 </p>
 <p>
 Parameters:
 </p>
 <ul>
  <li><b>system</b>: the URI of a code system within which the subsumption testing occurs</li>
- <li><b>coded1</b>: A <a href="datatypes.html#coding">Coding</a> or a resource element that is a <a href="datatypes.html#code">code</a></li>
- <li><b>coded2</b>: A <a href="datatypes.html#coding">Coding</a> or a resource element that is a <a href="datatypes.html#code">code</a></li>
+ <li><b>coded1</b>: A <a href="https://hl7.org/fhir/datatypes.html#coding">Coding</a> or a resource element that is a <a href="https://hl7.org/fhir/datatypes.html#code">code</a></li>
+ <li><b>coded2</b>: A <a href="https://hl7.org/fhir/datatypes.html#coding">Coding</a> or a resource element that is a <a href="https://hl7.org/fhir/datatypes.html#code">code</a></li>
  <li><b>params</b>: a URL encoded string with other parameters for the validate-code operation (e.g., 'version=2014-05-06')</li>
 </ul>
 <p>
@@ -166,18 +166,18 @@ Parameters:
 %terminologies.translate(conceptMap, coded, params) : Parameters
 </h4>
 <p>
-This calls the <a href="terminology-service.html#translate">Terminology Service $translate</a> operation (<a href="conceptmap-operation-translate.html">formal definition</a>).
+This calls the <a href="https://hl7.org/fhir/terminology-service.html#translate">Terminology Service $translate</a> operation (<a href="https://hl7.org/fhir/conceptmap-operation-translate.html">formal definition</a>).
 </p>
 <p>
 Parameters:
 </p>
 <ul>
- <li><b>conceptMap</b>: either an actual <a href="conceptmap.html">ConceptMap</a>, or a <a href="references.html#canonical">canonical URL</a> reference to a value set.</li>
- <li><b>coded</b>: The source to translate: a <a href="datatypes.html#coding">Coding</a> or a resource element that is a <a href="datatypes.html#code">code</a></li>
+ <li><b>conceptMap</b>: either an actual <a href="https://hl7.org/fhir/conceptmap.html">ConceptMap</a>, or a <a href="https://hl7.org/fhir/references.html#canonical">canonical URL</a> reference to a value set.</li>
+ <li><b>coded</b>: The source to translate: a <a href="https://hl7.org/fhir/datatypes.html#coding">Coding</a> or a resource element that is a <a href="https://hl7.org/fhir/datatypes.html#code">code</a></li>
  <li><b>params</b>: a URL encoded string with other parameters for the validate-code operation (e.g., 'source=http://acme.org/valueset/23&amp;target=http://acme.org/valueset/23')</li>
 </ul>
 <p>
-<b>Return Value:</b> A <a href="parameters.html">Parameters</a> resource with the results of the translation operation.
+<b>Return Value:</b> A <a href="https://hl7.org/fhir/parameters.html">Parameters</a> resource with the results of the translation operation.
 </p>
 
 
@@ -233,7 +233,7 @@ Parameters:
 </p>
 <ul>
   <li><b>url</b>: a string value that identifies the extension</li>
-  <li><b>value</b>: the value of the extension (<a href="datatypes.html#open">any valid type</a> for <a href="extensibility.html">extension.value[x]</a></li>
+  <li><b>value</b>: the value of the extension (<a href="https://hl7.org/fhir/datatypes.html#open">any valid type</a> for <a href="https://hl7.org/fhir/extensibility.html">extension.value[x]</a></li>
 </ul>
 <p>
 <b>Return Value:</b> An extension with the specified properties.
@@ -471,7 +471,7 @@ Parameters:
 <p>
 In order to support interaction with a server in FHIRPath statements, FHIR defines
 a general %server object that FHIRPath implementations should make available.
-Calls to this object are passed through a <a href="http.html">FHIR RESTful framework</a>.
+Calls to this object are passed through a <a href="https://hl7.org/fhir/http.html">FHIR RESTful framework</a>.
 </p>
 <p>
 Summary:
@@ -611,7 +611,7 @@ Perform a patch operation on the server.
 Parameters:
 </p>
 <ul>
-  <li><b>parameters</b>: A parameters resource for <a href="fhirpatch.html">FHIRPath Patch</a></li>
+  <li><b>parameters</b>: A parameters resource for <a href="https://hl7.org/fhir/fhirpatch.html">FHIRPath Patch</a></li>
 </ul>
 <p><b>Return Value:</b> The resource after the patch. If the patch fails, the return value is empty.</p>
 
@@ -646,7 +646,7 @@ Parameters:
 </p>
 <ul>
   <li><b>resource</b>: The resource to validate.</li>
-  <li><b>mode</b>: how to validate - see <a href="resource-operation-validate.html">Validation Operation</a>.</li>
+  <li><b>mode</b>: how to validate - see <a href="https://hl7.org/fhir/resource-operation-validate.html">Validation Operation</a>.</li>
   <li><b>parameters</b>: A parameters resource, or a string with URL parameters (name=value&amp;etc.)</li>
 </ul>
 <p><b>Return Value:</b> An operation outcome with issues. If the validation couldn't be performed, the return value is empty.</p>

@@ -2,7 +2,7 @@
 
 <h1>Operations for Large Resources (e.g., Groups/Lists)</h1>
 
-<table class="colsd"><tr><td id="wg">Responsible Owner: <a _target="blank" href="[%wg fhir%]">[%wgt fhir%]</a> Work Group</td><td id="ballot"><a href="https://hl7.org/fhir/build/versions.html#std-process">Standards Status</a>:<!--!ns!--><a href="https://hl7.org/fhir/build/versions.html#std-process">Draft</a></td></tr></table>
+<table class="colsd"><tr><td id="wg">Responsible Owner: <a _target="blank" href="[%wg fhir%]">[%wgt fhir%]</a> Work Group</td><td id="ballot"><a href="https://hl7.org/fhir/versions.html#std-process">Standards Status</a>:<!--!ns!--><a href="https://hl7.org/fhir/versions.html#std-process">Draft</a></td></tr></table>
 
 <p>
 This page defines three operations that allow for efficient 
@@ -14,12 +14,12 @@ the entire resource.
 </p>
 <p>
 Adding and deleting from the resource can also be done using 
-the <a href="https://hl7.org/fhir/build/http.html#patch">PATCH</a> interaction. Implementers 
+the <a href="https://hl7.org/fhir/http.html#patch">PATCH</a> interaction. Implementers 
 are welcome to use the patch interaction but these operations 
 provide more certainty and simplicity, since they are tailored
 directly to the List and Group resources. Similarly, Implementers
 can retrieve a subset of a List or Group resources
-using <a href="https://hl7.org/fhir/build/graphql.html">GraphQL</a>, but not all servers support 
+using <a href="https://hl7.org/fhir/graphql.html">GraphQL</a>, but not all servers support 
 GraphQL, and these operations are simpler than using GraphQL 
 to filter the data (and potentially quicker for the server than 
 using GraphQL).
@@ -101,7 +101,7 @@ If-Match: W/<span class="hljs-string">"4"</span>
 <p>
   Clients MAY supply an <code>If-Match</code> header with an ETag reflecting the current version of the target
   resource. Servers SHALL NOT proceed if a supplied ETag does not match the current version of the target resource,
-  following the scheme described at <a href="https://hl7.org/fhir/build/http.html#concurrency">https://hl7.org/fhir/http.html#concurrency</a>.
+  following the scheme described at <a href="https://hl7.org/fhir/http.html#concurrency">https://hl7.org/fhir/http.html#concurrency</a>.
 </p>
 
 
@@ -179,7 +179,7 @@ If-Match: W/<span class="hljs-string">"4"</span>
 <p>Clients MAY supply an <code>If-Match</code> header with an ETag reflecting the current version of the target
   resource. Servers SHALL NOT proceed if a supplied ETag does not match the current version of the target resource,
   following the scheme described at <a
-    href="https://hl7.org/fhir/build/http.html#concurrency">https://hl7.org/fhir/http.html#concurrency</a>.
+    href="https://hl7.org/fhir/http.html#concurrency">https://hl7.org/fhir/http.html#concurrency</a>.
 </p>
 
   <h2><code>$filter</code> operation</h2>
