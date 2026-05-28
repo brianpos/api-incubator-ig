@@ -45,13 +45,13 @@ parameters:
 pages:
   index.md:
     title: API Incubator
-  async-bulk.md:
-    title: Asynchronous bulk data pattern
+  async-bulk.html:
+    title: Asynchronous Bulk Data Request Pattern
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
-  async-bundle.md:
-    title: Asynchronous interaction pattern
+  async-bundle.html:
+    title: Asynchronous Interaction Request Pattern
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
@@ -60,7 +60,7 @@ pages:
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
-  fhirpath.md:
+  fhirpath.html:
     title: FHIRPath Extensions for FHIR
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status

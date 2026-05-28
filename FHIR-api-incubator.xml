@@ -40,8 +40,8 @@
 <page key="many" name="(many)"/>
 <page key="index" name="API Incubator"/>
 <page key="artifacts" name="Artifacts Summary"/>
-<page key="async-bulk" name="Asynchronous bulk data pattern"/>
-<page key="async-bundle" name="Asynchronous interaction pattern"/>
+<page key="async-bulk" name="Asynchronous Bulk Data Request Pattern"/>
+<page key="async-bundle" name="Asynchronous Interaction Request Pattern"/>
 <page key="changes" name="Change Log"/>
 <page key="fhirpath" name="FHIRPath Extensions for FHIR"/>
 <page key="operations-for-large-resources" name="Operations for Large Resources"/>
