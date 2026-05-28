@@ -44,6 +44,6 @@
 <page key="async-bundle" name="Asynchronous Interaction Request Pattern"/>
 <page key="changes" name="Change Log"/>
 <page key="fhirpath" name="FHIRPath Extensions for FHIR"/>
-<page key="operations-for-large-resources" name="Operations for Large Resources"/>
+<page key="operations-for-large-resources" name="Operations for Large Resources (e.g., Groups/Lists)"/>
 <page key="toc" name="Table of Contents"/>
 </specification>

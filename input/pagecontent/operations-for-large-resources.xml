@@ -1,8 +1,4 @@
-<div>
-
-<h1>Operations for Large Resources (e.g., Groups/Lists)</h1>
-
-<table class="colsd"><tr><td id="wg">Responsible Owner: <a _target="blank" href="[%wg fhir%]">[%wgt fhir%]</a> Work Group</td><td id="ballot"><a href="https://hl7.org/fhir/versions.html#std-process">Standards Status</a>:<!--!ns!--><a href="https://hl7.org/fhir/versions.html#std-process">Draft</a></td></tr></table>
+<div xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.w3.org/1999/xhtml">
 
 <p>
 This page defines three operations that allow for efficient 
@@ -25,12 +21,14 @@ to filter the data (and potentially quicker for the server than
 using GraphQL).
 </p>
 
-<h2><code>$add</code> operation</h2>
+<a name="add-operation"></a>
+<h3><code>$add</code> operation</h3>
 <p>
   This instance-level operation merges array entries into an existing ("target") resource, based on values from a
   supplied ("input") resource, ignoring any values that are already present in the target.
 </p>
 
+<a name="add-example"></a>
 <h4>Example invocation: add two items to a Group</h4>
 <p>This example adds up to 2 new members to the member array of Group 123, based on whether these entity/period combinations already exist.</p>
 
@@ -53,6 +51,7 @@ If-Match: W/<span class="hljs-string">"4"</span>
 </code>
 </pre>
 
+<a name="add-list-example"></a>
 <h4>Example invocation: add two items to a List</h4>
 <p>This example adds up to 2 entries to the entry array of List 123, based on whether these item/date combinations
   already exist.</p>
@@ -75,7 +74,8 @@ If-Match: W/<span class="hljs-string">"4"</span>
 </code>
 </pre>
 
-<h3><code>$add</code> operation details</h3>
+<a name="add-operation-details"></a>
+<h4><code>$add</code> operation details</h4>
 <p>
   There is a <a href="OperationDefinition-Resource-large-resource-add.html">formal definition for this operation</a>
 </p>
@@ -97,7 +97,9 @@ If-Match: W/<span class="hljs-string">"4"</span>
   <li>The server SHALL extend the target resource array with any entries from the input resource array that do not
     match an existing entry. See <a href="#matching-algorithm">Matching Algorithm</a>.</li>
 </ul>
-<h3>Contention Management</h3>
+
+<a name="add-contention-management"></a>
+<h4>Contention Management</h4>
 <p>
   Clients MAY supply an <code>If-Match</code> header with an ETag reflecting the current version of the target
   resource. Servers SHALL NOT proceed if a supplied ETag does not match the current version of the target resource,
@@ -105,14 +107,15 @@ If-Match: W/<span class="hljs-string">"4"</span>
 </p>
 
 
-
-<h2><code>$remove</code> operation</h2>
+<a name="remove-operation"></a>
+<h3><code>$remove</code> operation</h3>
 
 <p>
 This instance-level operation removes array entries from an existing ("target") resource, based on a supplied
 ("input") resource, ignoring any values that are already absent in the target.
 </p>
 
+<a name="remove-example"></a>
 <h4>Example invocation: remove two items to a Group</h4>
 <p>This example removes elements from the member array of Group 123 if they match the supplied combinations of
   entity/period.</p>
@@ -133,6 +136,7 @@ If-Match: W/<span class="hljs-string">"4"</span>
 }
 </code></pre>
 
+<a name="remove-list-example"></a>
 <h4>Example invocation: add two items to a List</h4>
 <p>This example removes elements from the entry array of List 123 if they match the supplied combinations of
   item/date.</p>
@@ -153,7 +157,8 @@ If-Match: W/<span class="hljs-string">"4"</span>
 }
 </code></pre>
 
-<h3><code>$remove</code> operation details</h3>
+<a name="remove-operation-details"></a>
+<h4><code>$remove</code> operation details</h4>
 <p>
   There is a <a href="OperationDefinition-Resource-large-resource-remove.html">formal definition for this operation</a>
 </p>
@@ -175,20 +180,24 @@ If-Match: W/<span class="hljs-string">"4"</span>
   <li>The server SHALL remove any entries in the target resource’s array that match an entry in the input resource’s
     array. See <a href="#matching-algorithm">Matching Algorithm</a>.</li>
 </ul>
-<h3>Contention Management</h3>
+
+<a name="remove-contention-management"></a>
+<h4>Contention Management</h4>
 <p>Clients MAY supply an <code>If-Match</code> header with an ETag reflecting the current version of the target
   resource. Servers SHALL NOT proceed if a supplied ETag does not match the current version of the target resource,
   following the scheme described at <a
     href="https://hl7.org/fhir/http.html#concurrency">https://hl7.org/fhir/http.html#concurrency</a>.
 </p>
 
-  <h2><code>$filter</code> operation</h2>
+<a name="filter-operation"></a>
+  <h3><code>$filter</code> operation</h3>
   <div>
     This instance-level operation returns the subset of array entries from an existing ("target") resource that match
     values from a supplied ("input") resource.
   </div>
 
   <div>
+    <a name="filter-example"></a>
     <h4>Example invocation: filter a List by Patient</h4>
     <p>This example filters List 123 to return items referencing Patient 456 (on any day) Patient 789 (in July 2022.</p>
     <pre class="hljs language-json"><code>POST /List/<span class="hljs-number">123</span>/$filter
@@ -238,7 +247,8 @@ Content-Type: application/fhir+json
 
   </div>
 
-  <h3><code>$filter</code> operation details</h3>
+  <a name="filter-operation-details"></a>
+  <h4><code>$filter</code> operation details</h4>
 
   <p>
     There is a <a href="OperationDefinition-Resource-large-resource-filter.html">formal definition for this operation</a>
@@ -266,7 +276,8 @@ Content-Type: application/fhir+json
   </ul>
   <hr />  
   <div>
-    <h3>Matching Algorithm</h3>
+    <a name="matching-algorithm"></a>
+    <h4>Matching Algorithm</h4>
     <p>Applies to: <code>$add</code>, <code>$remove</code>, and <code>$filter</code>.</p>
     <p>This algorithm determines whether an entry in the target resource array "matches" an entry in the input resource
       array. An entry is considered to "match" if:</p>
@@ -287,6 +298,7 @@ Content-Type: application/fhir+json
       </li>
     </ul>
     <hr />
+    <a name="matching-algorithm-examples"></a>
     <h5>Example 1: a single probe</h5>
     <p>Entry in input resource:</p>
     <pre class="hljs language-json"><code>{
@@ -303,6 +315,7 @@ Content-Type: application/fhir+json
       entry’s elements (<code>item</code> and <code>item.reference</code>). The presence of an additional
       <code>date</code> element in the target resource does not affect the result.</p>
     <hr />
+    <a name="matching-algorithm-example-2"></a>
     <h5>Example 2: asymmetry</h5>
     <p>Now consider the same inputs from Example (1), but swap their roles (input / target) as follows.</p>
     <p>Entry in input resource:</p>
@@ -316,9 +329,9 @@ Content-Type: application/fhir+json
   <span class="hljs-attr">"item"</span>: {<span class="hljs-attr">"reference"</span>: <span class="hljs-string">"Patient/123"</span>}
 }
 </code></pre>
-    <p>Result: this is <strong>not a match</strong>, because the target entry contains no match for the input entry’s
-      <code>date</code> element, and also no match for the input entry’s version-specific <code>item.reference</code>
-      element. This example shows that the comparision operation is not symmetric; inputs match more-specific targets,
+    <p>Result: this is <strong>not a match</strong>, because the target entry contains no match for the input entry's
+      <code>date</code> element, and also no match for the input entry's version-specific <code>item.reference</code>
+      element. This example shows that the comparison operation is not symmetric; inputs match more-specific targets,
       not less-specific targets.</p>
   </div>
   

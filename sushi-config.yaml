@@ -55,8 +55,8 @@ pages:
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
-  operations-for-large-resources.md:
-    title: Operations for Large Resources
+  operations-for-large-resources.html:
+    title: Operations for Large Resources (e.g., Groups/Lists)
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: trial-use
@@ -77,8 +77,8 @@ resources:
 menu:
   Home: index.html
   Specification:
-    Async Bulk Data Access: async-bulk.html
-    Async Bundle: async-bundle.html
+    Asynchronous Interaction Request Pattern: async-bundle.html
+    Asynchronous Bulk Data Request Pattern: async-bulk.html
     Operations for Large Resources: operations-for-large-resources.html
     FHIRPath Extensions for FHIR: fhirpath.html
   Artifacts: artifacts.html
