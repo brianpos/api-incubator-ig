@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <OperationDefinition xmlns="http://hl7.org/fhir">
-  <id value="Resource-meta-delete"/>
+  <id value="Resource-meta-add"/>
   <meta>
     <lastUpdated value="2021-01-05T10:01:24.148+11:00"/>
   </meta>
@@ -19,7 +19,7 @@
       <valueBoolean value="false"/>
     </extension>
     <extension url="content">
-      <valueString value="$meta-delete-request.txt"/>
+      <valueString value="$meta-add-request.txt"/>
     </extension>
   </extension>
   <extension url="http://hl7.org/fhir/build/StructureDefinition/example">
@@ -30,14 +30,14 @@
       <valueBoolean value="true"/>
     </extension>
     <extension url="content">
-      <valueString value="$meta-delete-response.txt"/>
+      <valueString value="$meta-add-response.txt"/>
     </extension>
   </extension>
-  <url value="http://hl7.org/fhir/build/OperationDefinition/Resource-meta-delete"/>
+  <url value="http://hl7.org/fhir/OperationDefinition/Resource-meta-add"/>
   <version value="6.0.0"/>
-  <name value="Metadelete"/>
-  <title value="Delete profiles, tags, and security labels for a resource"/>
-  <status value="draft"/>
+  <name value="Metaadd"/>
+  <title value="Add profiles, tags, and security labels to a resource"/>
+  <status value="active"/>
   <kind value="operation"/>
   <date value="2021-01-05T10:01:24+11:00"/>
   <publisher value="HL7 (FHIR Project)"/>
@@ -51,9 +51,9 @@
       <value value="fhir@lists.hl7.org"/>
     </telecom>
   </contact>
-  <description value="This operation takes a meta, and deletes the profiles, tags, and security labels found in it from the nominated resource"/>
+  <description value="This operation takes a meta, and adds the profiles, tags, and security labels found in it to the nominated resource"/>
   <affectsState value="true"/>
-  <code value="meta-delete"/>
+  <code value="meta-add"/>
   <resource value="Resource"/>
   <system value="false"/>
   <type value="false"/>
@@ -63,7 +63,7 @@
     <use value="in"/>
     <min value="1"/>
     <max value="1"/>
-    <documentation value="Profiles, tags, and security labels to delete from the existing resource. It is not an error if these tags, profiles, and labels do not exist.  The identity of a tag or security label is the system+code. When matching existing tags during deletion, version and display are ignored. For profiles, matching is based on the full URL"/>
+    <documentation value="Profiles, tags, and security labels to add to the existing resource. Note that profiles, tags, and security labels are sets, and duplicates are not created.  The identity of a tag or security label is the system+code. When matching existing tags during adding, version and display are ignored. For profiles, matching is based on the full URL"/>
     <type value="Meta"/>
   </parameter>
   <parameter>

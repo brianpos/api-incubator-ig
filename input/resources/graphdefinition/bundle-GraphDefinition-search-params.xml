@@ -12,7 +12,8 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="{{name}}.useContext.valueCodeableConcept"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-context"/>
+        <url value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context"/>
+        <status value="active"/>
         <description value="A use context assigned to the graph definition"/>
         <code value="context"/>
         <type value="token"/>
@@ -31,7 +32,8 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="{{name}}.useContext.valueQuantity,{{name}}.useContext.valueRange"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-context-quantity"/>
+        <url value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-quantity"/>
+        <status value="active"/>
         <description value="A quantity- or range-valued use context assigned to the graph definition"/>
         <code value="context-quantity"/>
         <type value="quantity"/>
@@ -50,7 +52,8 @@
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="{{name}}.useContext.code"/>
         </extension>
-        <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-context-type"/>
+        <url value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-type"/>
+        <status value="active"/>
         <description value="A type of use context assigned to the graph definition"/>
         <code value="context-type"/>
         <type value="token"/>
@@ -67,17 +70,18 @@
           <valueCode value="trial-use"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-context-type-quantity"/>
+        <status value="active"/>
         <description value="A use context type and quantity- or range-based value assigned to the graph definition"/>
         <code value="context-type-quantity"/>
         <type value="composite"/>
         <expression value="GraphDefinition.useContext"/>
         <processingMode value="normal"/>
         <component>
-          <definition value="context-type"/>
+          <definition value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-type"/>
           <expression value="code"/>
         </component>
         <component>
-          <definition value="context-quantity"/>
+          <definition value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-quantity"/>
           <expression value="value.ofType(Quantity) | value.ofType(Range)"/>
         </component>
       </SearchParameter>
@@ -91,17 +95,18 @@
           <valueCode value="trial-use"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-context-type-value"/>
+        <status value="active"/>
         <description value="A use context type and value assigned to the graph definition"/>
         <code value="context-type-value"/>
         <type value="composite"/>
         <expression value="GraphDefinition.useContext"/>
         <processingMode value="normal"/>
         <component>
-          <definition value="context-type"/>
+          <definition value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context-type"/>
           <expression value="code"/>
         </component>
         <component>
-          <definition value="context"/>
+          <definition value="http://hl7.org/fhir/SearchParameter/GraphDefinition-context"/>
           <expression value="value.ofType(CodeableConcept)"/>
         </component>
       </SearchParameter>
@@ -118,6 +123,7 @@
           <valueString value="{{name}}.date"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-date"/>
+        <status value="active"/>
         <description value="The graph definition publication date"/>
         <code value="date"/>
         <type value="date"/>
@@ -137,6 +143,7 @@
           <valueString value="{{name}}.description"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-description"/>
+        <status value="active"/>
         <description value="The description of the graph definition"/>
         <code value="description"/>
         <type value="string"/>
@@ -150,12 +157,13 @@
       <SearchParameter>
         <id value="GraphDefinition-identifier"/>
         <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-          <valueCode value="normative"/>
+          <valueCode value="trial-use"/>
         </extension>
         <extension url="http://hl7.org/fhir/build/StructureDefinition/path">
           <valueString value="{{name}}.identifier"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-identifier"/>
+        <status value="active"/>
         <description value="External identifier for the graph definition"/>
         <code value="identifier"/>
         <type value="token"/>
@@ -175,6 +183,7 @@
           <valueString value="{{name}}.jurisdiction"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-jurisdiction"/>
+        <status value="active"/>
         <description value="Jurisdiction of the authority that maintains the the graph definition"/>
         <code value="jurisdiction"/>
         <type value="token"/>
@@ -194,6 +203,7 @@
           <valueString value="{{name}}.name"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-name"/>
+        <status value="active"/>
         <description value="Computationally friendly name of the graph definition"/>
         <code value="name"/>
         <type value="string"/>
@@ -213,6 +223,7 @@
           <valueString value="{{name}}.publisher"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-publisher"/>
+        <status value="active"/>
         <description value="Name of the publisher of the graph definition"/>
         <code value="publisher"/>
         <type value="string"/>
@@ -232,6 +243,7 @@
           <valueString value="GraphDefinition.start"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-start"/>
+        <status value="active"/>
         <description value="Type of resource at which the graph starts"/>
         <code value="start"/>
         <type value="token"/>
@@ -251,6 +263,7 @@
           <valueString value="{{name}}.status"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-status"/>
+        <status value="active"/>
         <description value="The current status of the graph definition"/>
         <code value="status"/>
         <type value="token"/>
@@ -270,6 +283,7 @@
           <valueString value="{{name}}.url"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-url"/>
+        <status value="active"/>
         <description value="The uri that identifies the graph definition"/>
         <code value="url"/>
         <type value="uri"/>
@@ -289,6 +303,7 @@
           <valueString value="{{name}}.version"/>
         </extension>
         <url value="http://hl7.org/fhir/build/SearchParameter/GraphDefinition-version"/>
+        <status value="active"/>
         <description value="The business version of the graph definition"/>
         <code value="version"/>
         <type value="token"/>
@@ -304,8 +319,9 @@
           <valueString value="GraphDefinition.experimental"/>
         </extension>
         <extension url="http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status">
-          <valueCode value="normative"/>
+          <valueCode value="trial-use"/>
         </extension>
+        <status value="active"/>
         <description value="Whether the GraphDefinition is experimental"/>
         <code value="experimental"/>
         <type value="token"/>
